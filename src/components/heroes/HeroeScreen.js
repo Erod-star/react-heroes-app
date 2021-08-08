@@ -2,8 +2,9 @@ import React, { useMemo } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { getHeroesById } from '../../selectors/getHeroeById';
 
+
 // import batman from '../../assets/heroes/dc-batman.jpg'; // estático
-// const heroImages = require.context('../../assets/heroes', true ); // Con ayuda de Webpack
+const heroImages = require.context('../../assets/heroes', true ); // Con ayuda de Webpack
 
 export const HeroeScreen = ({ history }) => {
     
@@ -38,9 +39,9 @@ export const HeroeScreen = ({ history }) => {
         <div className="row no-gutters">
             <div className="col-6">
                 <img
-                    src={ `../assets/heroes/${ heroeId }.jpg` } // Desde 'public/assets'
+                    // src={ `../assets/heroes/${ heroeId }.jpg` } // Desde 'public/assets'
                     // src={ batman } // import
-                    // src={ heroImages(`./dc-superman.jpg`) }
+                    src={ heroImages(`./dc-superman.jpg`) }
                     alt={ superhero }
                     className="img.thumbnail animate__animated animate__fadeInLeftBig"
                 />
